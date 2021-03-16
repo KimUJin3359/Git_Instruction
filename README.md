@@ -2,16 +2,16 @@
 - 깃을 사용할 때 필요한 명령어들 정리
 
 ### Index
-- [git 파일 업로드]()
-- [git pull]()
-- [git .ignore 반영해서 다시 업로드]()
-- [git 작업(add, commit, pull, merge) 취소]()
+- [git 파일 업로드](https://github.com/KimUJin3359/Git_Instruction#%EC%83%88%EB%A1%9C%EC%9A%B4-%ED%8C%8C%EC%9D%BC-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8)
+- [git pull](https://github.com/KimUJin3359/Git_Instruction#git-gui%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%88%98%EC%A0%95%EC%9D%84-%ED%96%88%EC%9D%84-%EA%B2%BD%EC%9A%B0)
+- [git .ignore 반영해서 다시 업로드](https://github.com/KimUJin3359/Git_Instruction#gitignore%EB%A5%BC-%EB%B0%98%EC%98%81%ED%95%98%EC%A7%80-%EB%AA%BB%ED%96%88%EC%9D%84-%EB%95%8C)
+- [git 작업(add, commit, pull, merge) 취소](https://github.com/KimUJin3359/Git_Instruction#git-%EC%9E%91%EC%97%85-%EC%B7%A8%EC%86%8C)
 
 ### Git을 혼자 사용한다면
 - Branch를 사용할 필요가 없음
 - 별 다른 기능을 사용하지 않아도 됨
 
-#### 새로운 파일 업데이트
+### 새로운 파일 업데이트
 1) **git init**
 
 2) **git remote add [저장소명] [주소]**
@@ -26,18 +26,18 @@
 5) **git push [로컬 저장소명] [원격 저장소명]**
    - ex) git push origin master
 
-#### Git GUI를 통해 수정을 했을 경우
+### Git GUI를 통해 수정을 했을 경우
 - **git pull [로컬 저장소명] [원격 저장소명]**
   - ex) git pull origin master
 
-#### .gitignore를 반영하지 못했을 때 
+### .gitignore를 반영하지 못했을 때 
 1) git rm -r --cached .
 
 2) git add .
 
 3) git commit -m "v1.1_apply gitigrnoe"
 
-#### git 작업 취소
+### git 작업 취소
 - **git reset --mixed HEAD [파일명]**
   - **add를 취소**(mixed 옵션은 default)
   - 파일명 추가 시, 특정 파일 add 취소
