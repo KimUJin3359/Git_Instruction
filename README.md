@@ -75,6 +75,8 @@
   2) commit
   3) push -f (강제 푸쉬)
 
+
+
 ### Git을 같이 사용한다면
 - 이상적인 branch 관리
   ![total-branch](https://user-images.githubusercontent.com/50474972/111345204-63bb6380-86c0-11eb-83d2-438ae763811d.png)
