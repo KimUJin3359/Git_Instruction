@@ -7,9 +7,13 @@
 - [git .ignore 반영해서 다시 업로드](https://github.com/KimUJin3359/Git_Instruction#gitignore%EB%A5%BC-%EB%B0%98%EC%98%81%ED%95%98%EC%A7%80-%EB%AA%BB%ED%96%88%EC%9D%84-%EB%95%8C)
 - [git 작업(add, commit, pull, merge) 취소](https://github.com/KimUJin3359/Git_Instruction#git-%EC%9E%91%EC%97%85-%EC%B7%A8%EC%86%8C)
 
+---
+
 ### Git을 혼자 사용한다면
 - Branch를 사용할 필요가 없음
 - 별 다른 기능을 사용하지 않아도 됨
+
+---
 
 ### 새로운 파일 업데이트
 1) **git init**
@@ -30,12 +34,16 @@
 - **git pull [로컬 저장소명] [원격 저장소명]**
   - ex) git pull origin master
 
+---
+
 ### .gitignore를 반영하지 못했을 때 
 1) git rm -r --cached .
 
 2) git add .
 
 3) git commit -m "v1.1_apply gitigrnoe"
+
+---
 
 ### git 작업 취소
 - **git reset --mixed HEAD [파일명]**
@@ -80,6 +88,4 @@
 ### Git을 같이 사용한다면
 - 이상적인 branch 관리
   ![total-branch](https://user-images.githubusercontent.com/50474972/111345204-63bb6380-86c0-11eb-83d2-438ae763811d.png)
-
-- 
 
