@@ -87,5 +87,7 @@
 
 ### Git을 같이 사용한다면
 - 이상적인 branch 관리
-  ![total-branch](https://user-images.githubusercontent.com/50474972/111345204-63bb6380-86c0-11eb-83d2-438ae763811d.png)
+  ![다운로드](https://user-images.githubusercontent.com/50474972/112145243-76ccb700-8c1d-11eb-8018-875fc9aea51a.png)
 
+- Branch를 사용하여 각자의 환경에서 작업
+- 
