@@ -28,7 +28,9 @@
    - ex) git commit -m "v1.0_init"
 
 5) **git push [로컬 저장소명] [원격 저장소명]**
-   - ex) git push origin master
+   - ex) git push -u origin master
+   - -u 옵션 : 현재의 master 브랜치를 origin의 master 브랜치로 연결해줌 
+      - 다음에 'git push'를 하면 origin의 master 브랜치로 자동설정
 
 ### Git GUI를 통해 수정을 했을 경우
 - **git pull [로컬 저장소명] [원격 저장소명]**
