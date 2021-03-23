@@ -91,8 +91,9 @@
    ![다운로드](https://user-images.githubusercontent.com/50474972/112145243-76ccb700-8c1d-11eb-8018-875fc9aea51a.png)
 - 이상적인 branch 관리
 - branch를 사용하여 각자의 환경에서 작업
-- 다른 사람의 repository를 가져와서 작업하는 것이라면 fork -> pull request
-- 같이 공유된 repository를 작업하는 것이라면 'fetch, merge' or 'pull' 
+- 다른 사람의 repository를 가져와서 작업하는 것이라면 fork
+- 최신화 정보를 유지할 때 'fetch, merge' or 'pull'
+- 자신의 repository에 push를 한 후 pull request를 보내야 됨 
 
 #### 공부 후 추가 예정
 
