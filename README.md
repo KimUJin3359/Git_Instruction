@@ -1,43 +1,48 @@
 # Git_Instruction
 - 깃을 사용할 때 필요한 명령어들 정리
 
+# FETCH 및 그 이후부분 20210325 수정 예정
+
 ### Index
-- [전반적인 GIT에 대한 설명]()
-- [git 파일 업로드](https://github.com/KimUJin3359/Git_Instruction#%EC%83%88%EB%A1%9C%EC%9A%B4-%ED%8C%8C%EC%9D%BC-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8)
-- [git pull](https://github.com/KimUJin3359/Git_Instruction#git-gui%EB%A5%BC-%ED%86%B5%ED%95%B4-%EC%88%98%EC%A0%95%EC%9D%84-%ED%96%88%EC%9D%84-%EA%B2%BD%EC%9A%B0)
-- [git .ignore 반영해서 다시 업로드](https://github.com/KimUJin3359/Git_Instruction#gitignore%EB%A5%BC-%EB%B0%98%EC%98%81%ED%95%98%EC%A7%80-%EB%AA%BB%ED%96%88%EC%9D%84-%EB%95%8C)
-- [git 작업(add, commit, pull, merge) 취소](https://github.com/KimUJin3359/Git_Instruction#git-%EC%9E%91%EC%97%85-%EC%B7%A8%EC%86%8C)
+- [용어정리](https://github.com/KimUJin3359/Git_Instruction/blob/master/README.md#%EC%9A%A9%EC%96%B4-%EC%A0%95%EB%A6%AC)
+- [git 명령어](https://github.com/KimUJin3359/Git_Instruction/blob/master/README.md#git-%EB%AA%85%EB%A0%B9%EC%96%B4)
+- [git 명령어(branch 관련)](https://github.com/KimUJin3359/Git_Instruction/blob/master/README.md#git-%EB%B8%8C%EB%9E%9C%EC%B9%98%EA%B4%80%EB%A0%A8-%EB%AA%85%EB%A0%B9%EC%96%B4)
+- 명령어 활용
+  - [git 파일 업로드](https://github.com/KimUJin3359/Git_Instruction#%EC%83%88%EB%A1%9C%EC%9A%B4-%ED%8C%8C%EC%9D%BC-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8)
+  - [git .ignore 반영해서 다시 업로드](https://github.com/KimUJin3359/Git_Instruction#gitignore%EB%A5%BC-%EB%B0%98%EC%98%81%ED%95%98%EC%A7%80-%EB%AA%BB%ED%96%88%EC%9D%84-%EB%95%8C)
+  - [git 작업(add, commit, pull, merge) 취소](https://github.com/KimUJin3359/Git_Instruction#git-%EC%9E%91%EC%97%85-%EC%B7%A8%EC%86%8C)
 
 ## Git 정리
 
 ### 용어 정리
 #### Git : 분산형 버전 관리 시스템
-- 파일이 변경 이력 별로 구분되어 저장
+- 파일이 **변경 이력 별로 구분**되어 저장
 
 #### 저장소
-- 원격 저장소 : 전용 서버에서 관리되는 여러 사람과 함께 공유하는 저장소
-- 로컬 저장소 : 내 PC에 저장되는 개인 전용 저장소
+- **원격 저장소** : 전용 **서버에서 관리**되는 여러 사람과 함께 공유하는 저장소
+- **로컬 저장소** : 내 **PC에 저장**되는 개인 전용 저장소
 
 #### 로컬 저장소
-- 작업 트리 : 작업하는 폴더
-- 인덱스 : 작업 트리와 Local 저장소 사이의 공간
+- **작업 트리** : 작업하는 폴더
+- **인덱스** : 작업 트리와 Local 저장소 사이의 공간
 - staging : 인덱스에 파일 상태를 기록
 
 #### 브랜치(branch)
-- 개념 : 동일한 소스코드로 여러 작업(버그 픽스/기능 추가 등)을 수행하기 위해 만들어진 기능
+- 개념 : 동일한 소스코드로 **여러 작업(버그 픽스/기능 추가 등)을 수행**하기 위해 만들어진 기능
   - 각자 독립적인 작업 영역에서 소스코드 변경
-- master 브랜치
+- **master 브랜치**
   - 저장소를 처음 만들 때 생성되는 브랜치
   - 새로운 브랜치를 만들지 않는 이상 모든 작업은 master 브랜치에서 수행
-- integration(통합) 브랜치
+- **integration(통합) 브랜치**
   - 언제든지 배포할 수 있는 버전을 가진 브랜치(메인)
-- topic 브랜치
+  - 안정성이 유지되어야 함
+- **topic 브랜치**
   - 수정/기능 추가 등을 해야할 때 만들어내는 브랜치
-- HEAD
-  - 현재 사용 중인 브랜치의 선두 부분
+- **HEAD**
+  - 현재 사용 중인 **브랜치의 선두 부분**
     - 일반적으로 master의 선두 부분
   - HEAD 이동 시 사용하는 브랜치가 변경
-    - HEAD를 기준으로 브랜치 이동이 용이 
+    - **HEAD를 기준으로 브랜치 이동**이 용이 
     - ~ : 해당 커밋의 조상 브랜치 가리킴
     - ^ : 해당 커밋의 부모를 가리킴 -> 원본이 여러개 있는 경우 몇 번째 원본인지를 가리키는 용도로 사용 
   ```
@@ -49,16 +54,16 @@
            HEAD~1^2
   - HEAD~1^1 : HEAD~1의 부모 중 첫번째(^1)         
   ```
-- stash
-  - 파일의 변경 내용을 일시적으로 기록해두는 영역
+- **stash**
+  - 파일의 **변경 내용을 일시적으로 기록**해두는 영역
   - 작업트리와 인댁스 내에서 아직 커밋하지 않은 변경 사항을 일시적으로 저장
-- merge
-  - topic 브랜치를 만든 후, 수정 사항을 저장할 때 master 브랜치의 변경 내역이 없을 때 
+- **merge**
+  - topic 브랜치를 만든 후, 수정 사항을 저장할 때 master 브랜치의 변경 내역이 없을 때
     - 바로 topic 브랜치로 master 브랜치를 이동(fast-forward)
     - fast-forward를 할 수 있지만 non-fast-forward 병합 옵션을 지정가능(실행한 작업 확인 및 브랜치 관리면에서 유용)
   - topic 브랜치를 만든 후, 수정 사항을 저장할 때 master 브랜치의 변경 내역이 있을 때
-    - master 브랜치와 topic 브랜치를 하나로 통합
-- rebase
+    - master 브랜치와 topic 브랜치의 수정사항을 확인 후 하나로 통합
+- **rebase**
   - topic 브랜치를 만든 후, 수정 사항을 저장할 때 master 브랜치의 변경 내역이 있을 때
     - topic 브랜치를 master 브랜치에 rebase하면, topic 브랜치의 이력이 master 브랜치 뒤로 이동
     - 하나의 줄기처럼 보임
@@ -151,9 +156,7 @@
   - ==== 
   - 원격 저장소 내용
   ```
-
-# FETCH 및 그 이후부분 20210325 수정 예정
-
+  
 ---
 
 ### Git 브랜치관련 명령어
@@ -161,10 +164,10 @@
 - git branch "name"
 
 #### 브랜치 이동
-- git checkout 
+- git checkout "name"
   - 해당 브랜치로 이동
-  - 기존에 존재하던 브랜치라면 브랜치 안에 있는 마지막 커밋 내용이 작업 트리에 보여짐
-  - 커밋하지 않은 변경 사항이 인덱스와 작업 트리에 남아 있는 채로 다른 브랜치로 전환(checkout)하면, 변경 사항은 기존 브랜치가 아닌 전환된 브랜치에서 커밋 가능
+  - 기존에 존재하던 브랜치라면 브랜치 안에 있는 **마지막 커밋 내용이 작업 트리에 보여짐**
+  - **커밋하지 않은 변경 사항이 인덱스와 작업 트리에 남아 있는 채로 다른 브랜치로 전환(checkout)하면, 변경 사항은 기존 브랜치가 아닌 전환된 브랜치에서 커밋 가능**
     - 커밋 가능한 변경 내용 중 전환된 브랜치에서도 변경이 존재하는 경우에는 전환(checkout)에 실패할 수 있음
     - stash를 이용하여 충돌을 피하게 한 뒤 전환   
 - git checkout -b "name"
@@ -213,10 +216,6 @@
 
 5) **git push [로컬 저장소명] [원격 저장소명]**
    - ex) git push origin master
-   
-### Git GUI를 통해 수정을 했을 경우
-- **git pull [로컬 저장소명] [원격 저장소명]**
-  - ex) git pull origin master
 
 ---
 
