@@ -1,8 +1,6 @@
 # Git_Instruction
 - 깃을 사용할 때 필요한 명령어들 정리
 
-# FETCH 및 그 이후부분 20210325 수정 예정
-
 ### Index
 - [용어정리](https://github.com/KimUJin3359/Git_Instruction/blob/master/README.md#%EC%9A%A9%EC%96%B4-%EC%A0%95%EB%A6%AC)
 - [git 명령어](https://github.com/KimUJin3359/Git_Instruction/blob/master/README.md#git-%EB%AA%85%EB%A0%B9%EC%96%B4)
